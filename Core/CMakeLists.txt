@@ -9,9 +9,7 @@ add_library(Core STATIC
 # Set target properties
 target_include_directories(Core
     PUBLIC
-        Source
-    PRIVATE
-        Source/Core
+        ${CMAKE_CURRENT_SOURCE_DIR}/Source
 )
 
 # Compiler-specific settings

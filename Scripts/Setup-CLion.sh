@@ -1,44 +1,38 @@
 #!/bin/bash
+#
+# This script sets up the project for use with JetBrains CLion.
+# It generates the necessary CMake build files.
+#
 
-# Setup script for JetBrains CLion (CMake-based)
-# This script creates a build directory and configures CMake for CLion
+echo "⚙️  Setting up project for CLion..."
 
-echo "Setting up project for JetBrains CLion..."
+pushd ..
 
-# Create build directory
-mkdir -p build
-
-# Change to build directory
+# 1. Create a build directory
+echo "1. Creating build directory..."
+rm -rf build
+mkdir build
 cd build
 
-# Configure CMake with appropriate settings for your platform
-if [[ "$OSTYPE" == "darwin"* ]]; then
-    # macOS
-    echo "Configuring for macOS..."
-    cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=ON ..
-elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    # Linux
-    echo "Configuring for Linux..."
-    cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=ON ..
-elif [[ "$OSTYPE" == "msys" ]] || [[ "$OSTYPE" == "cygwin" ]]; then
-    # Windows
-    echo "Configuring for Windows..."
-    cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=ON ..
-fi
+# 2. Configure CMake
+echo "2. Configuring CMake..."
+cmake ..
+
+# 3. Build the project
+echo "3. Building project..."
+make
+
+cd ..
+
+popd
 
 echo ""
-echo "✅ CMake configuration complete!"
+echo "✅ CLion setup complete!"
 echo ""
-echo "📂 To open in CLion:"
-echo "   1. Open CLion"
-echo "   2. Choose 'Open' and select the project root directory"
-echo "   3. CLion will automatically detect the CMakeLists.txt files"
-echo "   4. Select your desired build configuration (Debug/Release)"
-echo "   5. Build and run the 'App' target"
+echo "🚀 HOW TO OPEN IN CLION:"
+echo "   1. Open CLion."
+echo "   2. Go to File > Open."
+echo "   3. Select the root 'ProjectTemplate-cherno' folder."
+echo "   4. When prompted, open as a CMake project."
+echo "   5. CLion will use the existing 'build' directory."
 echo ""
-echo "🔧 Build configurations available:"
-echo "   - Debug: Full debug symbols, no optimization"
-echo "   - Release: Optimized build, minimal debug info"
-echo "   - RelWithDebInfo: Optimized with debug symbols"
-echo ""
-echo "🚀 The main executable target is 'App'"

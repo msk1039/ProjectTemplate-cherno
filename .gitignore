@@ -26,6 +26,13 @@ _deps/
 .idea/usage.statistics.xml
 .idea/dictionaries
 .idea/shelf
+.idea/sonarlint/
+.idea/httpRequests/
+
+# Keep these CLion files for project setup
+# .idea/
+# .idea/cmake.xml
+# .idea/runConfigurations.xml
 
 # Exclude
 !Vendor/Binaries

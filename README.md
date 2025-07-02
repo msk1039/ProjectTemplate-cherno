@@ -33,11 +33,13 @@ Run `Scripts/Setup-Linux.sh` to generate Makefiles, then run `make` to build.
 ### JetBrains CLion
 CLion works with the included CMake configuration for cross-platform development:
 
-1. **Setup**: Run `Scripts/Setup-CLion.sh` (optional - configures build directory)
-2. **Open Project**: In CLion, choose "Open" and select the project root directory
-3. **Auto-Detection**: CLion will automatically detect the `CMakeLists.txt` files
+1. **Setup**: Run `Scripts/Setup-CLion.sh` (recommended - tests the build)
+2. **Open Project**: In CLion, choose **"Open"** and select the project root directory
+3. **Auto-Detection**: CLion will show "Open as CMake Project" - click it
 4. **Build Configuration**: Select Debug, Release, or RelWithDebInfo
 5. **Run**: Select the "App" target and run
+
+**⚠️ Troubleshooting**: If you see "Cannot find file" errors or "Add new configuration", see `CLION_SETUP.md` for detailed solutions.
 
 **Features**:
 - Full IDE integration with debugging, profiling, and code analysis
