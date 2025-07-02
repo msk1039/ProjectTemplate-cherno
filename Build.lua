@@ -36,4 +36,34 @@ group "Core"
 	include "Core/Build-Core.lua"
 group ""
 
+group "Trie"
+   include "Trie/Build-Trie.lua"
+group ""
+
 include "App/Build-App.lua"
+
+-- Custom run target for all platforms
+newaction {
+   trigger = "run",
+   description = "Run the built application",
+   execute = function()
+      local config = _ARGS[1] or "debug"
+      local appPath = ""
+      
+      if os.target() == "windows" then
+         appPath = "Binaries/windows-x64/" .. config .. "/App/App.exe"
+      elseif os.target() == "macosx" then
+         appPath = "Binaries/macosx-ARM64/" .. config .. "/App/App"
+      elseif os.target() == "linux" then
+         appPath = "Binaries/linux-x64/" .. config .. "/App/App"
+      end
+      
+      if os.isfile(appPath) then
+         print("Running: " .. appPath)
+         os.execute(appPath)
+      else
+         print("Error: Application not found at " .. appPath)
+         print("Make sure to build the project first with 'make' or 'make config=" .. config .. "'")
+      end
+   end
+}
