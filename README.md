@@ -15,6 +15,7 @@ The `Scripts/` directory contains build scripts for Windows and Linux, and the `
    - **Linux**: `Setup-Linux.sh` - generates gmake2 Makefiles
    - **macOS (Apple Silicon)**: `Setup-macOS.sh` - generates gmake2 Makefiles for ARM64
    - **macOS (Intel)**: `Setup-macOS-Intel.sh` - generates gmake2 Makefiles for x64
+   - **JetBrains CLion**: `Setup-CLion.sh` - configures CMake for cross-platform development
 
 ## Building on Different Platforms
 
@@ -29,6 +30,21 @@ Run `Scripts/Setup-Linux.sh` to generate Makefiles, then run `make` to build.
 - **Intel**: Run `Scripts/Setup-macOS-Intel.sh` to generate x64 Makefiles
 - Then run `make` to build. Works seamlessly with VS Code.
 
+### JetBrains CLion
+CLion works with the included CMake configuration for cross-platform development:
+
+1. **Setup**: Run `Scripts/Setup-CLion.sh` (optional - configures build directory)
+2. **Open Project**: In CLion, choose "Open" and select the project root directory
+3. **Auto-Detection**: CLion will automatically detect the `CMakeLists.txt` files
+4. **Build Configuration**: Select Debug, Release, or RelWithDebInfo
+5. **Run**: Select the "App" target and run
+
+**Features**:
+- Full IDE integration with debugging, profiling, and code analysis
+- Cross-platform CMake configuration
+- Automatic architecture detection (ARM64 for Apple Silicon, x64 for Intel)
+- Multiple build presets via `CMakePresets.json`
+
 **VS Code Integration**: The project includes VS Code configuration files (`.vscode/`) with:
 - Build tasks accessible via `Cmd+Shift+P` → "Tasks: Run Task"
 - IntelliSense configuration for C++20
@@ -40,6 +56,8 @@ Run `Scripts/Setup-Linux.sh` to generate Makefiles, then run `make` to build.
 - Simple `.gitignore` to ignore project files and binaries
 - Premake binaries for Win/Mac/Linux (`v5.0-beta2`)
 - VS Code configuration files (`.vscode/`) with build tasks, IntelliSense, and debugging setup for macOS
+- **CMake configuration** for JetBrains CLion and other CMake-based IDEs
+- **CMakePresets.json** for standardized build configurations
 
 ## License
 - UNLICENSE for this repository (see `UNLICENSE.txt` for more details)

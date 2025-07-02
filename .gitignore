@@ -1,6 +1,8 @@
 # Directories
 .vs/
 Binaries/
+build/
+cmake-build-*/
 
 # Files
 *.vcxproj
@@ -9,6 +11,21 @@ Binaries/
 *.sln
 *.log
 Makefile
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+compile_commands.json
+CTestTestfile.cmake
+_deps/
+
+# CLion
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/usage.statistics.xml
+.idea/dictionaries
+.idea/shelf
 
 # Exclude
 !Vendor/Binaries

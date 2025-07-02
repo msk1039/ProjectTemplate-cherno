@@ -1,0 +1,79 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "default-debug",
+      "displayName": "Debug",
+      "description": "Debug build with full symbols",
+      "generator": "Ninja",
+      "binaryDir": "build/debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+      }
+    },
+    {
+      "name": "default-release", 
+      "displayName": "Release",
+      "description": "Optimized release build",
+      "generator": "Ninja",
+      "binaryDir": "build/release",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+      }
+    },
+    {
+      "name": "apple-silicon-debug",
+      "displayName": "Apple Silicon Debug",
+      "description": "Debug build for Apple Silicon (ARM64)",
+      "generator": "Ninja",
+      "binaryDir": "build/arm64-debug",
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Darwin"
+      },
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_OSX_ARCHITECTURES": "arm64",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+      }
+    },
+    {
+      "name": "intel-mac-debug",
+      "displayName": "Intel Mac Debug", 
+      "description": "Debug build for Intel Macs (x86_64)",
+      "generator": "Ninja",
+      "binaryDir": "build/x64-debug",
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Darwin"
+      },
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_OSX_ARCHITECTURES": "x86_64",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "debug",
+      "configurePreset": "default-debug"
+    },
+    {
+      "name": "release",
+      "configurePreset": "default-release"
+    },
+    {
+      "name": "arm64-debug",
+      "configurePreset": "apple-silicon-debug"
+    },
+    {
+      "name": "x64-debug", 
+      "configurePreset": "intel-mac-debug"
+    }
+  ]
+}
