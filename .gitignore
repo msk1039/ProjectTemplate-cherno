@@ -36,3 +36,29 @@ _deps/
 
 # Exclude
 !Vendor/Binaries
+
+# Build artifacts & directories
+build/
+build-*/
+cmake-build-*/
+Binaries/
+
+# IDE-specific files
+.idea/
+.vscode/
+
+# Premake-generated project files
+*.make
+Makefile
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.xcodeproj/
+
+# macOS-specific files
+.DS_Store
+
+# Other temporary files
+*.swp
+*.swo
