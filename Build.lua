@@ -1,8 +1,19 @@
 -- premake5.lua
 workspace "New Project"
-   architecture "x64"
    configurations { "Debug", "Release", "Dist" }
    startproject "App"
+
+   -- Set architecture based on platform and CPU
+   filter "system:macosx"
+      -- Default to ARM64 for Apple Silicon, but can be overridden
+      if _OPTIONS["arch"] then
+         architecture(_OPTIONS["arch"])
+      else
+         architecture "ARM64"  -- Default for modern Macs (Apple Silicon)
+      end
+   filter "system:windows or system:linux"
+      architecture "x64"    -- For Intel/AMD64 systems
+   filter {}
 
    -- Workspace-wide build options for MSVC
    filter "system:windows"

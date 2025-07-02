@@ -81,7 +81,7 @@
         {
             "label": "Run App (Debug)",
             "type": "shell",
-            "command": "./Binaries/macosx-x86_64/Debug/App/App",
+            "command": "./Binaries/macosx-ARM64/Debug/App/App",
             "group": "test",
             "dependsOn": "Build Debug",
             "presentation": {
@@ -96,7 +96,7 @@
         {
             "label": "Run App (Release)",
             "type": "shell",
-            "command": "./Binaries/macosx-x86_64/Release/App/App",
+            "command": "./Binaries/macosx-ARM64/Release/App/App",
             "group": "test",
             "dependsOn": "Build Release",
             "presentation": {

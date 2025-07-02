@@ -5,7 +5,7 @@
             "name": "Debug App",
             "type": "lldb",
             "request": "launch",
-            "program": "${workspaceFolder}/Binaries/macosx-x86_64/Debug/App/App",
+            "program": "${workspaceFolder}/Binaries/macosx-ARM64/Debug/App/App",
             "args": [],
             "cwd": "${workspaceFolder}",
             "preLaunchTask": "Build Debug"
@@ -14,7 +14,7 @@
             "name": "Release App", 
             "type": "lldb",
             "request": "launch",
-            "program": "${workspaceFolder}/Binaries/macosx-x86_64/Release/App/App",
+            "program": "${workspaceFolder}/Binaries/macosx-ARM64/Release/App/App",
             "args": [],
             "cwd": "${workspaceFolder}",
             "preLaunchTask": "Build Release"

@@ -6,8 +6,9 @@ namespace Core {
 
 	void PrintHelloWorld()
 	{
-		std::cout << "Hello World!\n";
+		std::cout << "Hello World clion!\n";
 		std::cin.get();
+
 	}
 
 }

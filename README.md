@@ -13,7 +13,8 @@ The `Scripts/` directory contains build scripts for Windows and Linux, and the `
 4. Open the `Scripts/` directory and run the appropriate `Setup` script to generate projects files. You can edit the setup scripts to change the type of project that is generated:
    - **Windows**: `Setup-Windows.bat` - generates Visual Studio 2022 project files
    - **Linux**: `Setup-Linux.sh` - generates gmake2 Makefiles
-   - **macOS**: `Setup-macOS.sh` - generates gmake2 Makefiles (supports both Intel and Apple Silicon)
+   - **macOS (Apple Silicon)**: `Setup-macOS.sh` - generates gmake2 Makefiles for ARM64
+   - **macOS (Intel)**: `Setup-macOS-Intel.sh` - generates gmake2 Makefiles for x64
 
 ## Building on Different Platforms
 
@@ -24,12 +25,15 @@ Run `Scripts/Setup-Windows.bat` to generate Visual Studio project files, then op
 Run `Scripts/Setup-Linux.sh` to generate Makefiles, then run `make` to build.
 
 ### macOS
-Run `Scripts/Setup-macOS.sh` to generate Makefiles, then run `make` to build. Supports both Intel and Apple Silicon Macs. Works seamlessly with VS Code.
+- **Apple Silicon (M1/M2/M3)**: Run `Scripts/Setup-macOS.sh` to generate ARM64 Makefiles
+- **Intel**: Run `Scripts/Setup-macOS-Intel.sh` to generate x64 Makefiles
+- Then run `make` to build. Works seamlessly with VS Code.
 
 **VS Code Integration**: The project includes VS Code configuration files (`.vscode/`) with:
 - Build tasks accessible via `Cmd+Shift+P` → "Tasks: Run Task"
 - IntelliSense configuration for C++20
 - Recommended extensions for C++ development
+- Debug configurations for both architectures
 
 ## Included
 - Some example code (in `App/Source` and `Core/Source`) to provide a starting point and test
