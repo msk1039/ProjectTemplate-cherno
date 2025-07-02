@@ -16,34 +16,23 @@ endif()
 if(APPLE)
     # macOS settings
     set(CMAKE_OSX_DEPLOYMENT_TARGET "11.0" CACHE STRING "macOS Deployment Target")
-    add_compile_definitions(MACOS)
-
+    
     # Set architecture for Apple Silicon vs Intel
     if(NOT CMAKE_OSX_ARCHITECTURES)
         set(CMAKE_OSX_ARCHITECTURES "arm64" CACHE STRING "macOS Architectures")
     endif()
-
+    
     # Compiler flags for macOS
     add_compile_options(-Wall -Wextra)
 
 elseif(WIN32)
     # Windows settings
-    add_compile_definitions(WINDOWS)
     add_compile_options(/W4 /EHsc /Zc:preprocessor /Zc:__cplusplus)
 
 elseif(UNIX AND NOT APPLE)
     # Linux settings
-    add_compile_definitions(LINUX)
     add_compile_options(-Wall -Wextra)
 endif()
-
-# --- Configuration-specific settings ---
-# Debug
-add_compile_definitions($<$<CONFIG:Debug>:DEBUG>)
-# Release
-add_compile_definitions($<$<CONFIG:Release>:RELEASE NDEBUG>)
-# Distribution
-add_compile_definitions($<$<CONFIG:Dist>:DIST NDEBUG>)
 
 # --- Output directories ---
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/${CMAKE_BUILD_TYPE})

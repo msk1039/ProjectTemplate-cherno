@@ -6,12 +6,16 @@
 
 echo "⚙️  Setting up project for CLion..."
 
-pushd ..
+# Get the directory of this script
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+PROJECT_ROOT="$SCRIPT_DIR/.."
+
+cd "$PROJECT_ROOT"
 
 # 1. Create a build directory
 echo "1. Creating build directory..."
 rm -rf build
-mkdir build
+mkdir -p build
 cd build
 
 # 2. Configure CMake
@@ -23,8 +27,6 @@ echo "3. Building project..."
 make
 
 cd ..
-
-popd
 
 echo ""
 echo "✅ CLion setup complete!"
