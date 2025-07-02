@@ -27,6 +27,9 @@ project "App"
        systemversion "latest"
        defines { "WINDOWS" }
 
+   filter "system:macosx"
+       defines { "MACOS" }
+
    filter "configurations:Debug"
        defines { "DEBUG" }
        runtime "Debug"

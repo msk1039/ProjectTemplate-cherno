@@ -10,14 +10,32 @@ The `Scripts/` directory contains build scripts for Windows and Linux, and the `
 1. Clone this repository or use the "Use this template" button on GitHub to quickly set up your own repository based on this template
 2. `App/` and `Core/` are the two projects - you can edit the names of these folders and their contents to suit
 3. The three included Premake build files are `Build.lua`, `Core/Build-Core.lua` and `App/Build-App.lua` - you can edit these to customise your build configurations, edit the names of your projects and workspace/solution, etc.
-4. Open the `Scripts/` directory and run the appropriate `Setup` script to generate projects files. You can edit the setup scripts to change the type of project that is generated - out of the box they are set to Visual Studio 2022 for Windows and gmake2 for Linux.
+4. Open the `Scripts/` directory and run the appropriate `Setup` script to generate projects files. You can edit the setup scripts to change the type of project that is generated:
+   - **Windows**: `Setup-Windows.bat` - generates Visual Studio 2022 project files
+   - **Linux**: `Setup-Linux.sh` - generates gmake2 Makefiles
+   - **macOS**: `Setup-macOS.sh` - generates gmake2 Makefiles (supports both Intel and Apple Silicon)
 
-Note that no macOS setup script is currently provided; you can duplicate the Linux script and adjust accordingly.
+## Building on Different Platforms
+
+### Windows
+Run `Scripts/Setup-Windows.bat` to generate Visual Studio project files, then open the solution in Visual Studio.
+
+### Linux  
+Run `Scripts/Setup-Linux.sh` to generate Makefiles, then run `make` to build.
+
+### macOS
+Run `Scripts/Setup-macOS.sh` to generate Makefiles, then run `make` to build. Supports both Intel and Apple Silicon Macs. Works seamlessly with VS Code.
+
+**VS Code Integration**: The project includes VS Code configuration files (`.vscode/`) with:
+- Build tasks accessible via `Cmd+Shift+P` → "Tasks: Run Task"
+- IntelliSense configuration for C++20
+- Recommended extensions for C++ development
 
 ## Included
 - Some example code (in `App/Source` and `Core/Source`) to provide a starting point and test
 - Simple `.gitignore` to ignore project files and binaries
 - Premake binaries for Win/Mac/Linux (`v5.0-beta2`)
+- VS Code configuration files (`.vscode/`) with build tasks, IntelliSense, and debugging setup for macOS
 
 ## License
 - UNLICENSE for this repository (see `UNLICENSE.txt` for more details)
