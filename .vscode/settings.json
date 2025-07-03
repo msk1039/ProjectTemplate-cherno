@@ -1,0 +1,54 @@
+{
+    "C_Cpp.default.cppStandard": "c++20",
+    "C_Cpp.default.cStandard": "c17",
+    "C_Cpp.default.intelliSenseMode": "macos-clang-arm64",
+    "C_Cpp.errorSquiggles": "enabled",
+    "C_Cpp.autocomplete": "enabled",
+    "C_Cpp.suggestSnippets": true,
+    "C_Cpp.enhancedColorization": "enabled",
+    "C_Cpp.inlayHints.autoDeclarationTypes.enabled": true,
+    "C_Cpp.inlayHints.parameterNames.enabled": true,
+    "C_Cpp.default.configurationProvider": "ms-vscode.cpptools",
+    "files.associations": {
+        "*.h": "cpp",
+        "*.hpp": "cpp",
+        "*.cpp": "cpp",
+        "*.cc": "cpp",
+        "*.cxx": "cpp",
+        "*.lua": "lua",
+        "istream": "cpp",
+        "new": "cpp",
+        "iostream": "cpp"
+    },
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4,
+    "editor.detectIndentation": false,
+    "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools",
+        "editor.tabSize": 4,
+        "editor.insertSpaces": true
+    },
+    "[c]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools",
+        "editor.tabSize": 4,
+        "editor.insertSpaces": true
+    },
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "cmake.configureOnOpen": false,
+    "files.exclude": {
+        "**/Binaries/**": true,
+        "**/Intermediates/**": true,
+        "**/.vs/**": true,
+        "**/bin/**": true,
+        "**/obj/**": true
+    },
+    "search.exclude": {
+        "**/Binaries/**": true,
+        "**/Intermediates/**": true,
+        "**/.vs/**": true,
+        "**/bin/**": true,
+        "**/obj/**": true
+    }
+}

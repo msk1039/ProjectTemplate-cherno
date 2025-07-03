@@ -6,7 +6,7 @@ add_executable(App
 )
 
 # Link libraries
-target_link_libraries(App PRIVATE Core)
+target_link_libraries(App PRIVATE Core Trie)
 
 # Compiler-specific settings
 target_compile_features(App PRIVATE cxx_std_20)

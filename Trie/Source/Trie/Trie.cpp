@@ -16,7 +16,7 @@ namespace data_structures
         return (links[ch - 'a'] != nullptr);
     }
 
-    Node *Node::get(char ch)
+    Node *Node::get(char ch) const
     {
         return links[ch - 'a'];
     }
@@ -26,7 +26,7 @@ namespace data_structures
         links[ch - 'a'] = node;
     }
 
-    bool Node::isEnd()
+    bool Node::isEnd() const
     {
         return flag;
     }
@@ -36,12 +36,12 @@ namespace data_structures
     }
     Node::~Node()
     {
-        for (int i = 0; i < 26; ++i)
+        for (auto & link : links)
         {
-            if (links[i] != nullptr)
+            if (link != nullptr)
             {
-                delete links[i];
-                links[i] = nullptr;
+                delete link;
+                link = nullptr;
             }
         }
     }

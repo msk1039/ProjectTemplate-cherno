@@ -45,7 +45,7 @@ Binaries/
 
 # IDE-specific files
 .idea/
-.vscode/
+# .vscode/
 
 # Premake-generated project files
 *.make

@@ -41,6 +41,7 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib/${CMAKE_BUILD_TYPE})
 
 # --- Add subdirectories ---
 add_subdirectory(Core)
+add_subdirectory(Trie)
 add_subdirectory(App)
 
 # --- Set startup project ---

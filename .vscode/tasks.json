@@ -1,0 +1,108 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Debug",
+            "type": "shell",
+            "command": "make",
+            "args": ["config=debug"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Build the project in Debug configuration"
+        },
+        {
+            "label": "Build Release",
+            "type": "shell",
+            "command": "make",
+            "args": ["config=release"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Build the project in Release configuration"
+        },
+        {
+            "label": "Clean",
+            "type": "shell",
+            "command": "make",
+            "args": ["clean"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "detail": "Clean all build artifacts"
+        },
+        {
+            "label": "Run App (Debug)",
+            "type": "shell",
+            "command": "./Binaries/macosx-ARM64/Debug/App/App",
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared"
+            },
+            "dependsOn": "Build Debug",
+            "detail": "Build and run the application in Debug mode"
+        },
+        {
+            "label": "Run App (Release)",
+            "type": "shell",
+            "command": "./Binaries/macosx-ARM64/Release/App/App",
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared"
+            },
+            "dependsOn": "Build Release",
+            "detail": "Build and run the application in Release mode"
+        },
+        {
+            "label": "Generate Project Files",
+            "type": "shell",
+            "command": "./Scripts/Setup-macOS.sh",
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "detail": "Regenerate project files using Premake"
+        },
+        {
+            "label": "Build and Run (Debug)",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "Build Debug",
+                "Run App (Debug)"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "detail": "Build in Debug mode and run the application"
+        }
+    ]
+}

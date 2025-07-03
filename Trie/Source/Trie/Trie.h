@@ -12,9 +12,9 @@ namespace data_structures
         bool flag = false;
 
         bool containsKey(char ch);
-        Node *get(char ch);
+        Node *get(char ch) const;
         void put(char ch, Node *node);
-        bool isEnd();
+        bool isEnd() const;
         void setEnd();
         ~Node();
     };
