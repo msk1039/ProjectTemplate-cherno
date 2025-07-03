@@ -2,6 +2,7 @@
 #include "Trie/Trie.h"
 #include "iostream"
 #include "string"
+
 int main()
 {
     // Core::PrintHelloWorld();
