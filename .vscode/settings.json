@@ -37,18 +37,18 @@
     },
     "terminal.integrated.defaultProfile.osx": "zsh",
     "cmake.configureOnOpen": false,
-    "files.exclude": {
-        "**/Binaries/**": true,
-        "**/Intermediates/**": true,
-        "**/.vs/**": true,
-        "**/bin/**": true,
-        "**/obj/**": true
-    },
-    "search.exclude": {
-        "**/Binaries/**": true,
-        "**/Intermediates/**": true,
-        "**/.vs/**": true,
-        "**/bin/**": true,
-        "**/obj/**": true
-    }
+    // "files.exclude": {
+    //     "**/Binaries/**": true,
+    //     "**/Intermediates/**": true,
+    //     "**/.vs/**": true,
+    //     "**/bin/**": true,
+    //     "**/obj/**": true
+    // },
+    // "search.exclude": {
+    //     "**/Binaries/**": true,
+    //     "**/Intermediates/**": true,
+    //     "**/.vs/**": true,
+    //     "**/bin/**": true,
+    //     "**/obj/**": true
+    // }
 }
